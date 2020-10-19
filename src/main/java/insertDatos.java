@@ -36,14 +36,15 @@ public class insertDatos {
 
         String palabra = datos;
         String[] partes= null;
-        for (int i = 0; i < datos.length(); i++) {
+        for (int i = 0; i < 1; i++) {
             partes = palabra.split(",");
-        }
-
-
             idProd=0;
             cateId=0;
             storID=0;
+        }
+
+
+
 
 
 
@@ -82,11 +83,11 @@ public class insertDatos {
                 stmnt =cc.createStatement();
 
 
-                System.out.println("estees el dato idProd   ===="+idProd);
+                // System.out.println("estees el dato idProd   ===="+idProd);
                 if(idProd==0){
 
                     if(cateId==0){
-                        System.out.println("entro alprimer if cateId..................");
+                       // System.out.println("entro alprimer if cateId..................");
                         String sql = "INSERT INTO category(category_id,category_name) "
                                 +  "values" + "(" + idCategoria + ", " +"'"+ categoriaProducto+"'" +")";
 
@@ -103,7 +104,7 @@ public class insertDatos {
 
                     System.out.println("este es el dato antes de entrar al if sortID"+storID);
                     if(storID==0){
-                        System.out.println("entro al segundo if storID................");
+                      //  System.out.println("entro al segundo if storID................");
                         String sql4 = "INSERT INTO store(store_id, store_name) "
                                 +  "values" + "(" + storeId + "," +"'"+ storeName+"'" +")";
 
@@ -120,7 +121,7 @@ public class insertDatos {
                     }
 
                 }else{
-                    System.out.println("aqui va el update sql");
+                   // System.out.println("aqui va el update sql");
                     if(cateId==0){
                         String sql7 = "INSERT INTO category(category_id,category_name) "
                                 +  "values" + "(" + idCategoria + ", " +"'"+ categoriaProducto+"'" +")";
@@ -151,6 +152,7 @@ public class insertDatos {
             }  catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
+
 
     }
 
